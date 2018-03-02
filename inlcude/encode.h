@@ -79,12 +79,12 @@ extern "C"
 	extern int pushing_frame(void *rawdatabuf, void *videoparam);
 
 	/*
-	* 当外部没有帧了，将is_finished标志位置1，用以通知编码线程要停止编码了
+	* 当外部没有帧了，将is_finished标志位置1，用以通知编码线程要停止编码
 	*/
 	extern void ending_push(void *videoparam);
 
 	/*
-	* 当用户按了停止键，将is_stop标志位置1，通知编码线程推出循坏，提前结束编码
+	* 当用户按了停止键，将is_stop标志位置1，通知编码线程退出循坏，提前结束编码
 	*/
 	extern void setting_stop(void *videoparm);
 
