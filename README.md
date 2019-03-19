@@ -2,13 +2,13 @@
 ### 将外部传进来的BGRA帧编码成各种格式的视频文件
 
 
-该项目基于FFFmpeg框架，将air平台传来的每一BGRA帧进行编码，生成视频文件，然后将视频和air平台传来的MP3文件重新复用（mux），生成各种格式的视频。
+基于FFFmpeg框架，将外部传来的每一BGRA帧进行编码，生成视频文件，然后将视频和外部传来的MP3文件重新复用（mux），生成各种格式的视频。
 
 * common.h  
   > 导入FFmpeg需要的头文件和库
 
 * encode.h    
-  > 对外（air平台）提供了5个接口:    
+  > 对外提供了5个接口:    
   >> preparing_to_push //设置视频参数和FFmpeg相关结构体，创建编码线程encode_thread  
   >> pushing_frame     //外部传入一帧（倒转的RGBA帧），将帧写入AVFifoBuffer中  
   >> ending_push       //当外部没有帧了，将is_finished标志位置1，用以通知编码线程要停止编码    
